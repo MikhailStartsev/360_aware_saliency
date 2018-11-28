@@ -68,7 +68,7 @@ The following folders contain the code from the following repositories:
 * `edn_cvpr2014` -- https://github.com/coxlab/edn-cvpr2014
 * `saliency_attentive_model`  -- https://github.com/marcellacornia/sam
 
-An example equirectangular image and its saliency map are provided with the repository.
+An example equirectangular image and its saliency map are provided with the repository (those were part of the training data set of the "Salient360!" challenge, which is publicly available).
 
 # I. Installation
 
