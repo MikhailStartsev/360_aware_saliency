@@ -1,0 +1,29 @@
+A subset of submitted models (parameters for individual models, i.e. the --mode and the --model arguments):
+To run our recommentded (best on the Saliency360! Grand Challange) model,
+
+"Combined (Continuity- & Cube Map-Aware) Ensemble Saliency Prediction (eDN + SAM-ResNet + GBVS) incl. Center Bias",
+
+execute:
+
+./360_aware.py /path/to/input/image.jpg /path/to/output/folder/image.bin --mode combined --model average --centre-bias-weight 0.2
+
+
+Other individual-interpretation models (with the ensemble saliency predictor) can be executed via:
+
+(1) for Continuity-Aware Ensemble Saliency Prediction (eDN + SAM-ResNet + GBVS),
+./360_aware.py /path/to/input/image.jpg /path/to/output/folder/image.bin --mode simple --model average
+
+(2) for Extended Cutout Ensemble Saliency Prediction (eDN + SAM-ResNet + GBVS),
+./360_aware.py /path/to/input/image.jpg /path/to/output/folder/image.bin --mode cutout --model average
+
+(3) for Combined (Continuity- & Cube Map-Aware) Ensemble Saliency Prediction (eDN + SAM-ResNet + GBVS),
+./360_aware.py /path/to/input/image.jpg /path/to/output/folder/image.bin --mode combined --model average
+
+
+To add centre (equator) bias to any saliency map estimator combination, simply add --centre-bias-weight argument (0.0 to 1.0). See an example above.
+
+
+
+
+Note: see README for installation instructions and other info.
+See `./360_aware.py --help` for information on additional options.
