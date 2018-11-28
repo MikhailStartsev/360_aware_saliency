@@ -177,6 +177,8 @@ sudo pip install theano tensorflow
 sudo apt install nvidia-cuda-toolkit
 ```
 
+**Keras versions 2 and higher are likely incompatible with this library!** We tested our model with Keras 1.2.2 and Theano 0.9.0 (see command for downgrading below). 
+
 Install OpenCV 3.0.0 like here: http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/ , up to step 10 (maybe without verualenv-related instructions).
 
 If some error with memcpy occurs, add this
@@ -201,10 +203,14 @@ Note: Be sure to have `"image_dim_ordering": "th"` and `"backend": "theano"` in 
 
 
 If the line 
-    from keras import initializations ,
-try downgrading Keras and Theano to versions 1.2.2 and 0.9.0, respectively:
-    sudo pip install keras==1.2.2
-    sudo pip install theano==0.9.0
+
+    from keras import initializations
+    
+yields an error, this is an issue with version 2 of Keras being incompatible with older code. We tested this with Keras and Theano versions 1.2.2 and 0.9.0, respectively. You con downgrade as follows:
+```
+sudo pip install keras==1.2.2
+sudo pip install theano==0.9.0
+```
 
 # II. Test run (on a single image)
 
