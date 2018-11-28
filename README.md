@@ -158,47 +158,52 @@ The following folders contain the code from the following repositories:
     import sthor  # should import without errors
     ```
 
-    ### GBVS INSTALLATION
+### GBVS INSTALLATION
 
-    No additional packages required, just having a Matlab installation that can be called from terminal as `matlab`.
+No additional packages required, just having a Matlab installation that can be called from terminal as `matlab`.
 
-    ### Saliency Attentive Model (SAM) INSTALLATION
+### Saliency Attentive Model (SAM) INSTALLATION
+
+First, **download the weights of the pretrained SAM-ResNet model** from here: https://github.com/marcellacornia/sam/releases/download/1.0/sam-resnet_salicon_weights.pkl
+
+Save this file to the `saliency_attentive_model/weights` folder.
+
+```
+sudo pip install keras
+sudo pip install theano tensorflow
+
+# to make it run on GPU insterad of CPU
+sudo apt install nvidia-cuda-toolkit
+```
+
+Install OpenCV 3.0.0 like here: http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/ , up to step 10 (maybe without verualenv-related instructions).
+
+If some error with memcpy occurs, add this
     ```
-    sudo pip install keras
-    sudo pip install theano tensorflow
-
-    # to make it run on GPU insterad of CPU
-    sudo apt install nvidia-cuda-toolkit
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_FORCE_INLINES")
     ```
-
-    Install OpenCV 3.0.0 like here: http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/ , up to step 10 (maybe without verualenv-related instructions).
-
-    If some error with memcpy occurs, add this
-        ```
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_FORCE_INLINES")
-        ```
-    to the begining of OpenCV's CMakeLists.txt.
+to the begining of OpenCV's CMakeLists.txt.
 
 
-    * Libgpuarray:
+* Libgpuarray:
 
-        Follow the instruction here: http://deeplearning.net/software/libgpuarray/installation.html ,
-        the sections "Download" and "Step-by-step install: system library (as admin)"
-    (use `sudo make install` and `sudo python setup.py install`, if need be).
+    Follow the instruction here: http://deeplearning.net/software/libgpuarray/installation.html ,
+    the sections "Download" and "Step-by-step install: system library (as admin)"
+(use `sudo make install` and `sudo python setup.py install`, if need be).
 
-    * cuDNN:
+* cuDNN:
 
-        Follow the instructions here: https://askubuntu.com/a/767270
-
-
-    Note: Be sure to have `"image_dim_ordering": "th"` and `"backend": "theano"` in your keras.json file (normally ~/.keras/keras.json).
+    Follow the instructions here: https://askubuntu.com/a/767270
 
 
-    If the line 
-        from keras import initializations ,
-    try downgrading Keras and Theano to versions 1.2.2 and 0.9.0, respectively:
-        sudo pip install keras==1.2.2
-        sudo pip install theano==0.9.0
+Note: Be sure to have `"image_dim_ordering": "th"` and `"backend": "theano"` in your keras.json file (normally ~/.keras/keras.json).
+
+
+If the line 
+    from keras import initializations ,
+try downgrading Keras and Theano to versions 1.2.2 and 0.9.0, respectively:
+    sudo pip install keras==1.2.2
+    sudo pip install theano==0.9.0
 
 # II. Test run (on a single image)
 
