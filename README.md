@@ -64,6 +64,7 @@ The repository contains the source code of the GBVS, eDN, and SAM models. See `M
 The following folders contain the code from the following repositories:
 
 * `cube2sphere` -- https://github.com/Xyene/cube2sphere
+* `sphere2cube` -- https://github.com/Xyene/sphere2cube
 * `edn_cvpr2014` -- https://github.com/coxlab/edn-cvpr2014
 * `saliency_attentive_model`  -- https://github.com/marcellacornia/sam
 
