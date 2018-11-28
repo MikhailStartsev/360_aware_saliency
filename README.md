@@ -42,7 +42,7 @@ The image transformations ("interpretations") we propose are as follows:
 ![alt text](https://github.com/MikhailStartsev/360_aware_saliency/blob/master/figures/continuity_aware.png "Continuity-aware saliency prediction")
 
 
-* *Cube map-based*: The equirectangular input is converted to a set of cube faces, which undistorts the image, but looses the context information of the whole scene. We experimented with different methods to regain context (see the paper), but eventually decided for assembling a coutout, and augmenting it with cube faces that would mostly match the borders of the "main" cutout. We call this an *extended cutout*:
+* *Cube map-based*: The equirectangular input is converted to a set of cube faces, which undistorts the image, but looses the context information of the whole scene. We experimented with different methods to regain context (see the paper), but eventually decided for assembling a cutout, and augmenting it with cube faces that would mostly match the borders of the "main" cutout. We call this an *extended cutout*:
 
 ![alt text](https://github.com/MikhailStartsev/360_aware_saliency/blob/master/figures/extended_cutout.png "Continuity-aware saliency prediction")
 
@@ -59,7 +59,7 @@ We also included an option to add a "centre" (more like "equator") bias to our p
 
 See section **IV** below for instructions to run our best model.
 
-The repository contains the source code of the GBVS, eDN, and SAM models. See `MODIFICATIONS-README.txt` files inside the respective folders for the slight modifictions in the processing pipeline that we made (for exanple, not to re-normalise the saliency maps after preditction, since then combining saliency maps from different interpretation-based images would be done regardless of the scale of the originally predicted saliency values).  
+The repository contains the source code of the GBVS, eDN, and SAM models. See `MODIFICATIONS-README.txt` files inside the respective folders for the slight modifications in the processing pipeline that we made (for example, not to re-normalise the saliency maps after prediction, since otherwise combining saliency maps from different interpretation-based images would be done regardless of the scale of the originally predicted saliency values).  
 
 The following folders contain the code from the following repositories:
 
